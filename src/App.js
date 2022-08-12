@@ -62,7 +62,7 @@ function App() {
       <div style={{ height:"105px",background : "#16ABF8",boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.1)' }}>
         <div className=' flex items-center justify-center w-full h-full'>
           <div className='w-3/4'>
-            <p style={{ fontStyle: 'normal',
+            <p data-cy='header-title' style={{ fontStyle: 'normal',
                         fontWeight: 700,
                         fontSize: '24px',
                         lineHeight: '36px',
@@ -76,14 +76,14 @@ function App() {
           <div className='w-3/4'>
             <div className=' flex items-center relative '>
               <div className='flex items-center h-full '>
-              <p style={{ fontStyle: 'normal',
+              <p data-cy="activity-title" style={{ fontStyle: 'normal',
                         fontWeight: 700,
                         fontSize: '36px',
                         lineHeight: '54px',
                         color : "#111111" }}
                         className="">Activity</p>
               </div>
-            <div onClick={Tambah} style={{ width: '159px',
+            <div data-cy='activity-add-button' onClick={Tambah} style={{ width: '159px',
                           height: '54px',
                           background : "#16ABF8",
                           borderRadius: '45px',
@@ -99,7 +99,7 @@ function App() {
 
         <div style={{ marginTop:"55px" }} className=' flex items-center justify-center w-full h-full'>
           <div className='w-3/4'>
-        <div className=' lg:grid gap-5 grid-cols-4'>
+        <div data-cy='activity-item 'className=' lg:grid gap-5 grid-cols-4'>
           {list.map(function(data){
             return (
               <div style={{ width: '235px',
@@ -117,7 +117,7 @@ function App() {
                 <div className='absolute bottom-0 w-full'>
                   <div className=' relative flex items-center m-5'>
                   <p className=''>12 Agustus 2022</p>
-                  <img onClick={function(){Delete(data.title,data.id)}} className='cursor-pointer hover:opacity-75 absolute right-0' src={trash}></img>
+                  <img data-cy='activity-item-delete-button' onClick={function(){Delete(data.title,data.id)}} className='cursor-pointer hover:opacity-75 absolute right-0' src={trash}></img>
                   </div>
                 </div>
               </div>
@@ -143,7 +143,7 @@ function App() {
                           className=" text-center mt-12">Apakah anda yakin menghapus activity
 “{del}”?</p>
                 <div className=' flex items-center' style={{ marginTop:"46px" }}>
-                  <div onClick={Batal} style={{ width: '150px',
+                  <div data-cy='modal-delete-cancel-button' onClick={Batal} style={{ width: '150px',
                                 height: '54px',
                                 background: '#F4F4F4',
                                 borderRadius: '45px',
@@ -156,7 +156,7 @@ function App() {
                                className="flex justify-center items-center cursor-pointer hover:opacity-80">
                                 Batal
                                </div>
-                <div onClick={Hapus} style={{ width: '150px',
+                <div data-cy='activity-item-delete-button' onClick={Hapus} style={{ width: '150px',
                                 height: '54px',
                                 background: '#ED4C5C',
                                 borderRadius: '45px',
